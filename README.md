@@ -60,7 +60,7 @@ El servidor correrá en [http://localhost:8000](http://localhost:8000)
 ## 🐳 Crear la imagen de Docker
 
 ```bash
-docker-compose up --build --force-recreate
+docker-compose up --build
 ```
 
 ---
