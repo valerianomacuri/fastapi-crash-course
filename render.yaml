@@ -4,5 +4,5 @@ services:
     name: fastapi-app
     runtime: python
     repo: https://github.com/valerianomacuri/fastapi-crash-course.git
-    buildCommand: 'uv install'
+    buildCommand: 'uv sync'
     startCommand: 'python -m gunicorn app.main:app -k uvicorn.workers.UvicornWorker'
