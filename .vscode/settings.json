@@ -5,7 +5,7 @@
       "baseUrl": "http://localhost:8000"
     },
     "prod": {
-      "baseUrl": "https://api.prod.tudominio.com/api"
+      "baseUrl": "https://fastapi-app-9o7g.onrender.com"
     }
   }
 }
