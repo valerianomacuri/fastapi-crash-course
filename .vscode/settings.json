@@ -1,0 +1,11 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {},
+    "local": {
+      "baseUrl": "http://localhost:8000"
+    },
+    "prod": {
+      "baseUrl": "https://api.prod.tudominio.com/api"
+    }
+  }
+}
