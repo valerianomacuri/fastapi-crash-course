@@ -1,0 +1,35 @@
+@product_id = 39757bfe-42f2-4285-9873-2400f96f4384
+
+###
+
+GET http://localhost:8000/products
+Content-Type: application/json
+
+###
+
+GET http://localhost:8000/products/{{product_id}}
+Content-Type: application/json
+
+###
+
+POST http://localhost:8000/products
+Content-Type: application/json
+
+{
+    "name": "Product 1",
+    "price": 99
+}
+
+###
+
+PUT http://localhost:8000/products/{{product_id}}
+Content-Type: application/json
+
+{
+    "price": 99.99
+}
+
+###
+
+DELETE http://localhost:8000/products/{{product_id}}
+Content-Type: application/json
