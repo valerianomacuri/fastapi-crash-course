@@ -1,5 +1,5 @@
 from typing import List, Optional
-from uuid import uuid4
+from uuid import UUID, uuid4
 
 from app.products.entity import Product
 
@@ -13,14 +13,14 @@ class ProductsRepository:
     def __init__(self):
         self.__products: List[Product] = fake_products
 
-    def add(self, product: Product) -> Product:
+    def create(self, product: Product) -> Product:
         self.__products.append(product)
         return product
 
-    def list_all(self) -> List[Product]:
+    def find_all(self) -> List[Product]:
         return self.__products
 
-    def get_by_id(self, product_id: str) -> Optional[Product]:
+    def find_by_id(self, product_id: UUID) -> Optional[Product]:
         for product in self.__products:
             if product.id == product_id:
                 return product
@@ -34,7 +34,7 @@ class ProductsRepository:
         return product
 
     def remove(self, product_id: str) -> Optional[Product]:
-        product = self.get_by_id(product_id)
+        product = self.find_by_id(product_id)
         if product:
             self.__products = [p for p in self.__products if p.id != product_id]
         return product

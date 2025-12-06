@@ -17,14 +17,14 @@ class ProductsService:
             name=create_dto.name,
             price=create_dto.price,
         )
-        return self.__repository.add(new_product)
+        return self.__repository.create(new_product)
 
     def find_all(self) -> List[Product]:
-        return self.__repository.list_all()
+        return self.__repository.find_all()
 
     def find_one(self, product_id: UUID) -> Product:
-        product = self.__repository.get_by_id(product_id)
-        if not product:
+        product = self.__repository.find_by_id(product_id)
+        if product is None:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail=f"Product with id {product_id} not found",
