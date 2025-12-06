@@ -44,13 +44,13 @@ uv install --group dev
 Para desarrollo (auto-recarga de cambios):
 
 ```bash
-uv run poe dev
+uvicorn app.main:app --reload
 ```
 
 Para producción:
 
 ```bash
-uv run poe start
+uvicorn app.main:app
 ```
 
 El servidor correrá en [http://localhost:8000](http://localhost:8000)
