@@ -10,7 +10,7 @@ dependencies = ["fastapi>=0.123.10", "pydantic>=2.12.5", "uvicorn>=0.38.0"]
 dev = ["poethepoet>=0.38.0"]
 
 [tool.poe.tasks]
-dev = "uvicorn app.main:app --reload --reload-dir app"
+dev = "uvicorn app.main:app --reload"
 start = "uvicorn app.main:app"
 
 [tool.black]
