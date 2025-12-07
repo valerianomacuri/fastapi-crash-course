@@ -28,13 +28,13 @@ cd fastapi-crash-course
 2. Instalar dependencias con **uv**:
 
 ```bash
-uv install
+uv sync
 ```
 
 3. Instalar dependencias de desarrollo (opcional):
 
 ```bash
-uv install --group dev
+uv sync --group dev
 ```
 
 ---
@@ -44,13 +44,13 @@ uv install --group dev
 Para desarrollo (auto-recarga de cambios):
 
 ```bash
-uvicorn app.main:app --reload
+uv run uvicorn app.main:app --reload
 ```
 
 Para producción:
 
 ```bash
-uvicorn app.main:app
+python -m gunicorn app.main:app -k uvicorn.workers.UvicornWorker
 ```
 
 El servidor correrá en [http://localhost:8000](http://localhost:8000)
@@ -72,13 +72,6 @@ Se utiliza **Black** para formateo:
 ```bash
 uv run black .
 ```
-
----
-
-## ⚡ Tareas con uv (poethepoet)
-
-* `uv run dev` → Ejecuta la app en modo desarrollo
-* `uv run start` → Ejecuta la app en modo producción
 
 ---
 
